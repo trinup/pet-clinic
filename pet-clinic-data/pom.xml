@@ -40,6 +40,11 @@
 
     <!--Create lean jar with just the class files and not a fat one with all the dependencies
         and tomcat server because we'll not directly execute data module jar but use it in web module jar-->
+
+    <properties>
+        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -50,9 +55,9 @@
                         <goals>
                             <goal>repackage</goal>
                         </goals>
-                        <configuration>
-                            <skip>true</skip>
-                        </configuration>
+                        <!--<configuration>-->
+                            <!--<skip>true</skip>-->
+                        <!--</configuration>-->
                     </execution>
                 </executions>
             </plugin>
